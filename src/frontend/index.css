@@ -1,0 +1,485 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Veinbit Technologies Design System ── */
+/* Futuristic dark theme: neon blue, purple, cyan */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Dark futuristic theme (primary) */
+    --background: 0.06 0.015 255;
+    --foreground: 0.93 0.02 220;
+    --card: 0.1 0.02 255;
+    --card-foreground: 0.93 0.02 220;
+    --popover: 0.08 0.02 255;
+    --popover-foreground: 0.93 0.02 220;
+    --primary: 0.75 0.15 200;
+    --primary-foreground: 0.05 0.01 255;
+    --secondary: 0.55 0.2 285;
+    --secondary-foreground: 0.93 0.02 220;
+    --muted: 0.12 0.02 255;
+    --muted-foreground: 0.55 0.04 230;
+    --accent: 0.82 0.18 175;
+    --accent-foreground: 0.05 0.01 255;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0.04 255;
+    --input: 0.15 0.03 255;
+    --ring: 0.75 0.15 200;
+
+    /* Chart colors */
+    --chart-1: 0.75 0.18 200;
+    --chart-2: 0.55 0.2 285;
+    --chart-3: 0.82 0.18 175;
+    --chart-4: 0.65 0.22 300;
+    --chart-5: 0.7 0.15 240;
+
+    /* Sidebar */
+    --sidebar: 0.08 0.02 255;
+    --sidebar-foreground: 0.93 0.02 220;
+    --sidebar-primary: 0.75 0.15 200;
+    --sidebar-primary-foreground: 0.05 0.01 255;
+    --sidebar-accent: 0.12 0.02 255;
+    --sidebar-accent-foreground: 0.93 0.02 220;
+    --sidebar-border: 0.22 0.04 255;
+    --sidebar-ring: 0.75 0.15 200;
+
+    /* Veinbit brand tokens */
+    --neon-blue: 0.76 0.18 210;
+    --neon-purple: 0.55 0.22 290;
+    --neon-cyan: 0.88 0.16 170;
+    --glow-blue: rgba(0, 200, 255, 0.5);
+    --glow-purple: rgba(139, 92, 246, 0.5);
+    --glow-cyan: rgba(6, 255, 212, 0.5);
+
+    /* Glass effect */
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 24px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", "Sora", sans-serif;
+    overflow-x: hidden;
+    background: #03040a;
+  }
+}
+
+/* ── Typography ── */
+.font-display {
+  font-family: "Bricolage Grotesque", "Outfit", sans-serif;
+}
+
+.font-body {
+  font-family: "Outfit", "Sora", sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #00c8ff 0%, #8b5cf6 50%, #06ffd4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue-purple {
+  background: linear-gradient(135deg, #00c8ff 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-purple-cyan {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06ffd4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow Text ── */
+.glow-text-blue {
+  text-shadow: 0 0 20px rgba(0, 200, 255, 0.6), 0 0 40px rgba(0, 200, 255, 0.3);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(6, 255, 212, 0.6), 0 0 40px rgba(6, 255, 212, 0.3);
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-blue {
+  background: rgba(0, 200, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+}
+
+/* ── Glow Borders ── */
+.glow-border-blue {
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.1), inset 0 0 20px rgba(0, 200, 255, 0.05);
+}
+
+.glow-border-purple {
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1), inset 0 0 20px rgba(139, 92, 246, 0.05);
+}
+
+.glow-border-cyan {
+  border: 1px solid rgba(6, 255, 212, 0.3);
+  box-shadow: 0 0 20px rgba(6, 255, 212, 0.1), inset 0 0 20px rgba(6, 255, 212, 0.05);
+}
+
+/* ── Gradient Button ── */
+.btn-gradient {
+  background: linear-gradient(135deg, #00c8ff 0%, #8b5cf6 50%, #06ffd4 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── Gradient Border Button ── */
+.btn-outline-glow {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-glow:hover {
+  border-color: rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+/* ── Ripple Animation ── */
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(12px) rotate(-2deg); }
+  66% { transform: translateY(6px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px rgba(0, 200, 255, 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 30px rgba(0, 200, 255, 0.6), 0 0 60px rgba(0, 200, 255, 0.2); }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes counter-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+/* ── Floating Tech Icons ── */
+.floating-icon {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.floating-icon-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.floating-icon-slow {
+  animation: float 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── Scroll Progress Bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00c8ff, #8b5cf6, #06ffd4);
+  z-index: 9999;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+}
+
+/* ── Mouse Glow ── */
+.mouse-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.06) 0%, rgba(139, 92, 246, 0.03) 40%, transparent 70%);
+  transition: opacity 0.3s ease;
+}
+
+/* ── Section Headers ── */
+.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 200, 255, 0.7);
+}
+
+/* ── Particle Background ── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.8) 0%, transparent 70%);
+  animation: particle-float linear infinite;
+  pointer-events: none;
+}
+
+/* ── Service Cards 3D Tilt ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 200, 255, 0.15), 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.tilt-card-inner {
+  transform-style: preserve-3d;
+  transform: translateZ(20px);
+}
+
+/* ── Tech Stack Cards ── */
+.tech-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* ── Portfolio Cards ── */
+.portfolio-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ── Why Choose Us ── */
+.feature-block {
+  transition: all 0.3s ease;
+}
+
+.feature-block:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Stat Counter ── */
+.stat-value {
+  font-family: "Bricolage Grotesque", sans-serif;
+  animation: counter-up 0.6s ease forwards;
+}
+
+/* ── Navbar ── */
+.navbar-glass {
+  background: rgba(3, 4, 10, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-transparent {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03040a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00c8ff, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* ── Section divider ── */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00c8ff, #8b5cf6, #06ffd4, transparent);
+  opacity: 0.4;
+}
+
+/* ── Neon flicker on logo ── */
+.logo-text {
+  animation: neon-flicker 8s ease-in-out infinite;
+}
+
+/* ── Background grid pattern ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 200, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Tech icon glow ── */
+.tech-glow-hover:hover {
+  filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.7));
+}
+
+/* ── Reveal animations ── */
+@media (prefers-reduced-motion: reduce) {
+  .floating-icon,
+  .floating-icon-reverse,
+  .floating-icon-slow {
+    animation: none;
+  }
+
+  .btn-gradient {
+    animation: none;
+    background: linear-gradient(135deg, #00c8ff, #8b5cf6);
+  }
+}
