@@ -295,7 +295,7 @@ export default function ContactSection() {
               style={{ height: "280px" }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.5!2d67.0!3d24.86!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUxJzM2LjAiTiA2N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62562.44!2d75.3408!3d11.8745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43165a7c8c2a7%3A0xa56bd4cf11f7e87b!2sKannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000"
                 data-ocid="contact.map_marker"
                 width="100%"
                 height="100%"
@@ -317,9 +317,9 @@ export default function ContactSection() {
                 Contact Information
               </h3>
               {[
-                { label: "Email", value: "hello@veinbit.com", icon: "✉" },
-                { label: "Phone", value: "+1 (555) 000-0000", icon: "📞" },
-                { label: "Location", value: "Karachi, Pakistan", icon: "📍" },
+                { label: "Email", value: "contact@veinbit.com", icon: "✉" },
+                { label: "Phone", value: "+91 9008156391", icon: "📞" },
+                { label: "Location", value: "Kannur, Kerala", icon: "📍" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3">
                   <span className="text-base">{item.icon}</span>
